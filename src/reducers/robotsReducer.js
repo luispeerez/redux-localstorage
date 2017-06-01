@@ -11,14 +11,27 @@ export default function robotsReducer(state = [], action){
       return newState;
 
     case 'DELETE_ROBOT':
-      console.log('action', action);
       var newState = state.filter((robot, index) => {
         return robot.id !== action.id;
       });
-      console.log('newState', newState);
       return newState;      
     
+    case 'CREATE_ROBOT':
+      action.newRobot.id = makeid();
+      state.push(action.newRobot);
+      return state;
+
     default:
       return state;
   }
+}
+
+function makeid(){
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < 5; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
 }

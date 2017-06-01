@@ -11,10 +11,13 @@ class RobotPage extends Component {
     this.onSave = this.onSave.bind(this);
     this.resetState = this.resetState.bind(this);
 
+    var urlQuery = this.props.location.query;
 
     this.state = {
       robot: this.props.robot,
-      updateDone: false
+      updateDone: false,
+      createdFlag: urlQuery.created
+
     };
 
     this.firstState = _.clone(this.state);
@@ -40,13 +43,20 @@ class RobotPage extends Component {
 
     var saveNotification = null;
     if(this.state.updateDone){
-      var message = 'Cambios guardados'
+      var message = 'Cambios guardados';
       saveNotification = <Notification message={message} type={'success'} />;
+    }
+
+    var createNotification = null;
+    if(this.state.createdFlag){
+      var message = 'Robot creado';
+      createNotification = <Notification message={message} type={'success'} />;
     }
 
     return (
       <div className="container">
         <h1>Robot page</h1>
+
         <div className="columns">
             <div className="column is-one-quarter">
               <Robot robot={this.state.robot}/>
@@ -67,7 +77,7 @@ class RobotPage extends Component {
                     </p>
                   </div>
                   <div className="field">
-                    <label className="label">Manufacturer</label>
+                    <label className="label">Manufactura</label>
                     <p className="control">
                       <input 
                         className="input" 
@@ -94,6 +104,8 @@ class RobotPage extends Component {
         </div>
 
         {saveNotification}
+        {createNotification}
+
       </div>
     );
   }

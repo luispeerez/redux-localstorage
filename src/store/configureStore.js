@@ -11,6 +11,6 @@ export default function configureStore(){
     persistedState = JSON.parse(localStorageState);
   }
 
-  console.log('initialState', persistedState);
+  console.log('initialState', JSON.stringify(persistedState));
   return createStore(rootReducer, persistedState);
 }

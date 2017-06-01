@@ -39,7 +39,7 @@ class Robot extends Component{
             <div className="media-content">
               <p className="title is-4">{this.props.robot.name}</p>
               <p className="subtitle is-6">robot id: #{this.props.robot.id}</p>
-              <p><strong>Manufacturer</strong>: {this.props.robot.manufacturer}</p>
+              <p><strong>Manufactura</strong>: {this.props.robot.manufacturer}</p>
               {actionsBlock}
             </div>
           </div>
