@@ -21,7 +21,7 @@ var defaultInitialState = {
       id:"q4xsu"
     },
     {
-      name:"Chihiro",
+      name:"Ryu",
       manufacturer:"Japan",
       id:"xufFu"
     },
@@ -30,6 +30,11 @@ var defaultInitialState = {
       manufacturer:"Japan",
       id:"tRu50"
     },
+    {
+      name:"Nioh",
+      manufacturer:"Japan",
+      id:"vu3Fa"
+    },    
     {
       name:"Ultron",
       manufacturer:"USA",
@@ -40,6 +45,11 @@ var defaultInitialState = {
       manufacturer:"USA",
       id:"MPmR6"
     },
+    {
+      name:"War machine",
+      manufacturer:"USA",
+      id:"DPaL1"
+    },    
     {
       name:"Wall-e",
       manufacturer:"Canada",
